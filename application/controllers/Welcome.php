@@ -40,21 +40,26 @@ class Welcome extends CI_Controller {
 
 	private function save_item() 
 	{
+		$this->load->library('form_validation');
 		$input = $this->input->post();
+		
 		if(!empty($input)) {
-
-			if(empty($input['id']))
+			$this->form_validation->set_rules('name', 'ชื่อ', 'required');
+			if($this->form_validation->run())
 			{
-				// สร้างข้อมูลใหม่
-				$this->tb_test->create_item($input);
+				if(empty($input['id']))
+				{
+					// สร้างข้อมูลใหม่
+					$this->tb_test->create_item($input);
+				}
+				else 
+				{
+					// แก้ไขข้อมูล
+					$this->tb_test->update_item($input['id'], $input);
+				}
+	
+				redirect(base_url('/'));
 			}
-			else 
-			{
-				// แก้ไขข้อมูล
-				$this->tb_test->update_item($input['id'], $input);
-			}
-
-			redirect(base_url('/'));
 		}
 	}
 }

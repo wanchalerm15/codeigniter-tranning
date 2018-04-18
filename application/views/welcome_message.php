@@ -29,6 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							</td>
 							<td>
 								<input type="text" value="<?= isset($item->name) ? $item->name : '' ?>" name="name" class="form-control">
+								<?= form_error('name', '<small class="text-danger">', '</small>') ?>
 							</td>
 							<td>
 								<div class="row">
