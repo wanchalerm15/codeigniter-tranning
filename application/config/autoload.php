@@ -134,6 +134,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array(
-    'tb_test'
-);
+$autoload['model'] = array();
