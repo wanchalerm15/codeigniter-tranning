@@ -11,7 +11,7 @@
     <br>
     <div class="container">
         <div class="card">
-            <h5 class="card-header">Codeigniter การอัพโหลดไฟล์แบบไฟล์เดียว</h5>
+            <h5 class="card-header">Codeigniter การอัพโหลดไฟล์แบบหลายไฟล์</h5>
             <div class="card-body">
                 <form action="<?= base_url('upload/upload_multiple_file') ?>" method="post" enctype="multipart/form-data">
                     <div class="form-group">
